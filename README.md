@@ -1,76 +1,94 @@
-# Mini AI Agent
+#  Mini AI Agent
 
-A simple, robust AI agent built with FastAPI that answers questions using a Retrieval-Augmented Generation (RAG) approach. It retrieves relevant information from a local knowledge base and uses an LLM to generate grounded responses.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/Google%20Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini" />
+  <img src="https://img.shields.io/badge/Sentence--Transformers-FFD242?style=for-the-badge&logo=huggingface&logoColor=black" alt="Sentence Transformers" />
+</p>
 
-## Features
-
-- **RAG Architecture**: Retrieves relevant documents using semantic search (Sentence-Transformers).
-- **Agent Decision Logic**: Explicitly decides whether to answer, use a tool, or fallback if information is missing.
-- **FastAPI Service**: Exposes a clean REST API for querying the agent.
-- **Configurable**: Supports OpenAI-compatible LLMs (OpenAI, Azure, Local/Ollama).
-
-## Setup
-
-1.  **Clone the repository**:
-    ```bash
-    git clone <repository_url>
-    cd <repository_name>
-    ```
-
-2.  **Install dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  **Configure Environment**:
-    Create a `.env` file in the root directory (or rename `.env.example` if provided):
-    ```env
-    OPENAI_API_KEY=your_api_key_here
-    # Optional: For local LLMs
-    # OPENAI_BASE_URL=http://localhost:11434/v1
-    # LLM_MODEL=llama3
-    ```
-
-## Running the Agent
-
-### 1. Activating the Virtual Environment
-Before running the agent, ensure you are using the provided virtual environment:
-
-```bash
-# On macOS/Linux
-source venv/bin/activate
-
-# On Windows (Command Prompt)
-venv\Scripts\activate
-```
-
-### 2. Start the FastAPI server
-Once the environment is active, run the following command:
-
-```bash
-uvicorn main:app --reload
-```
-
-The API will be available at `http://localhost:8000`.
-Interactive documentation (Swagger UI) is available at `http://localhost:8000/docs`.
+A robust, developer-friendly AI agent built with **FastAPI** that leverages **Gemini** and **RAG (Retrieval-Augmented Generation)** to provide grounded, context-aware answers.
 
 ---
 
-## Troubleshooting
+##  Features
 
-### "Address already in use" Error
-If you see an error like `[Errno 48] Address already in use`, it means another process is already using port 8000. 
+- **Semantic Search**: Utilizes `sentence-transformers` to retrieve highly relevant context from a local knowledge base.
+- **Agent Reasoning**: Explicit decision-making logic determines whether to explain, compare, or fallback based on retrieved data.
+- **FastAPI Core**: High-performance, REST API.
+- **Gemini Powered**: Uses Google's Gemini model for high-quality, grounded responses.
+- **Zero Hallucination**: Strict prompting ensures the agent only answers from provided context.
 
-You can kill the existing process using:
+---
+
+##  Setup & Installation
+
+### 1. Clone & Navigate
 ```bash
-# On macOS/Linux
+git clone https://github.com/soumyaGhoshh/mini-rag-agent
+cd mini-rag-agent
+```
+
+### 2. Environment Configuration
+Create a `.env` file in the root directory:
+```env
+GEMINI_API_KEY=your_api_key_here
+LLM_MODEL=your_api_key_here
+```
+> [!NOTE]
+> Ensure you have a valid Gemini API key from Google AI Studio.
+
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+##  Running the Agent
+
+### 1. Activate Environment
+```bash
+# macOS/Linux
+source venv/bin/activate
+
+# Windows
+venv\Scripts\activate
+```
+
+### 2. Launch Server
+```bash
+uvicorn main:app --reload
+```
+The API will be available at `http://localhost:8000`. Interactive docs: `http://localhost:8000/docs`.
+
+---
+
+## Project Gallery
+
+````carousel
+![Normal Response](images/normal_instance.png)
+<!-- slide -->
+![Not Enough Information](images/not_enough_info.png)
+<!-- slide -->
+![Empty Query Handling](images/empty_query.png)
+<!-- slide -->
+![LLM Error Handling](images/llm_error.png)
+````
+
+---
+
+##  Troubleshooting
+
+### Port Conflict
+If port 8000 is occupied, you can kill the existing process:
+```bash
 lsof -ti:8000 | xargs kill -9
 ```
-Or simply run uvicorn on a different port:
+Or run on a different port:
 ```bash
 uvicorn main:app --reload --port 8001
 ```
-
 ## Usage
 
 **Endpoint**: `POST /agent/query`
@@ -112,3 +130,5 @@ uvicorn main:app --reload --port 8001
 -   **Model Loading**: The embedding model is loaded on startup. This increases startup time but ensures fast query processing.
 -   **Heuristic Decision**: The decision to "explain" or "compare" is currently based on simple keyword matching for visibility. A more complex agent would use the LLM to classify intent explicitly.
 -   **Synchronous Processing**: The current implementation is largely synchronous. For high traffic, async database/vector store calls would be preferred.
+
+---
