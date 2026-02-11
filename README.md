@@ -64,20 +64,6 @@ The API will be available at `http://localhost:8000`. Interactive docs: `http://
 
 ---
 
-## Project Gallery
-
-````carousel
-![Normal Response](images/normal_instance.png)
-<!-- slide -->
-![Not Enough Information](images/not_enough_info.png)
-<!-- slide -->
-![Empty Query Handling](images/empty_query.png)
-<!-- slide -->
-![LLM Error Handling](images/llm_error.png)
-````
-
----
-
 ##  Troubleshooting
 
 ### Port Conflict
