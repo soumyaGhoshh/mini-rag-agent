@@ -33,7 +33,19 @@ A simple, robust AI agent built with FastAPI that answers questions using a Retr
 
 ## Running the Agent
 
-Start the FastAPI server:
+### 1. Activating the Virtual Environment
+Before running the agent, ensure you are using the provided virtual environment:
+
+```bash
+# On macOS/Linux
+source venv/bin/activate
+
+# On Windows (Command Prompt)
+venv\Scripts\activate
+```
+
+### 2. Start the FastAPI server
+Once the environment is active, run the following command:
 
 ```bash
 uvicorn main:app --reload
@@ -41,6 +53,23 @@ uvicorn main:app --reload
 
 The API will be available at `http://localhost:8000`.
 Interactive documentation (Swagger UI) is available at `http://localhost:8000/docs`.
+
+---
+
+## Troubleshooting
+
+### "Address already in use" Error
+If you see an error like `[Errno 48] Address already in use`, it means another process is already using port 8000. 
+
+You can kill the existing process using:
+```bash
+# On macOS/Linux
+lsof -ti:8000 | xargs kill -9
+```
+Or simply run uvicorn on a different port:
+```bash
+uvicorn main:app --reload --port 8001
+```
 
 ## Usage
 
