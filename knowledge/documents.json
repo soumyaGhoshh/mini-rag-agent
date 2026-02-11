@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "FastAPI Basics",
+    "content": "FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints. Key features include automatic API documentation (Swagger UI), validation using Pydantic, and asynchronous support. It is built on top of Starlette for the web parts and Pydantic for the data parts.",
+    "tags": ["fastapi", "python", "web framework", "api"]
+  },
+  {
+    "id": "2",
+    "title": "Vector Databases",
+    "content": "A vector database indexes and stores vector embeddings for fast retrieval and similarity search. Unlike traditional databases that search for exact matches, vector databases find data that is semantically similar. Common vector databases include Pinecone, Milvus, Weaviate, and Chroma. They are essential for RAG applications.",
+    "tags": ["vector database", "embeddings", "rag", "search"]
+  },
+  {
+    "id": "3",
+    "title": "RAG Overview",
+    "content": "Retrieval-Augmented Generation (RAG) is a technique that enhances Large Language Model (LLM) responses by retrieving relevant data from an external knowledge base before generating an answer. This reduces hallucinations and allows the model to answer questions about private or up-to-date data not present in its training set.",
+    "tags": ["rag", "llm", "ai", "retrieval"]
+  },
+  {
+    "id": "4",
+    "title": "AI Agents",
+    "content": "AI Agents are systems that use LLMs as a reasoning engine to determine which actions to take and in what order. An agent can use tools (like search, calculators, or APIs) to perform tasks. Key components include the brain (LLM), memory, planning, and tools.",
+    "tags": ["ai agent", "llm", "reasoning", "tools"]
+  },
+  {
+    "id": "5",
+    "title": "Prompt Engineering Basics",
+    "content": "Prompt engineering is the art of crafting inputs (prompts) to guide Generative AI models to produce desired outputs. Techniques include zero-shot prompting, few-shot prompting (providing examples), and chain-of-thought prompting (asking the model to explain its reasoning). Context injection is also a key part of prompt engineering for RAG.",
+    "tags": ["prompt engineering", "llm", "ai", "generative ai"]
+  },
+    {
+    "id": "6",
+    "title": "FastAPI vs Flask",
+    "content": "FastAPI is generally faster than Flask due to its asynchronous capabilities and Starlette foundation. FastAPI includes built-in data validation and documentation, whereas Flask is more minimal and requires extensions for these features. Flask is often easier for beginners due to its simplicity, but FastAPI is preferred for modern, high-performance APIs.",
+    "tags": ["fastapi", "flask", "comparison", "python"]
+  }
+]
