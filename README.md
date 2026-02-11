@@ -29,16 +29,36 @@ git clone https://github.com/soumyaGhoshh/mini-rag-agent
 cd mini-rag-agent
 ```
 
-### 2. Environment Configuration
+### 2. Set Up Virtual Environment
+
+#### For macOS & Linux:
+```bash
+# Create the virtual environment
+python3 -m venv venv
+
+# Activate the virtual environment
+source venv/bin/activate
+```
+
+#### For Windows:
+```bash
+# Create the virtual environment
+python -m venv venv
+
+# Activate the virtual environment
+venv\Scripts\activate
+```
+
+### 3. Environment Configuration
 Create a `.env` file in the root directory:
 ```env
 GEMINI_API_KEY=your_api_key_here
-LLM_MODEL=your_api_key_here
+LLM_MODEL=gemini-2.0-flash
 ```
 > [!NOTE]
 > Ensure you have a valid Gemini API key from Google AI Studio.
 
-### 3. Install Dependencies
+### 4. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
@@ -47,16 +67,8 @@ pip install -r requirements.txt
 
 ##  Running the Agent
 
-### 1. Activate Environment
-```bash
-# macOS/Linux
-source venv/bin/activate
+Once the environment is active, run the following command:
 
-# Windows
-venv\Scripts\activate
-```
-
-### 2. Launch Server
 ```bash
 uvicorn main:app --reload
 ```
