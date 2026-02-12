@@ -11,7 +11,14 @@ A robust, developer-friendly AI agent built with **FastAPI** that leverages **Ge
 
 ---
 
-##  Features
+## 📺 Video Demo
+Interested in seeing the agent in action? Watch the technical walkthrough below:
+
+[**Watch Project Demo Video**](images/project_demo.mov)
+
+---
+
+## Project Gallery
 
 - **Semantic Search**: Utilizes `sentence-transformers` to retrieve highly relevant context from a local knowledge base.
 - **Agent Reasoning**: Explicit decision-making logic determines whether to explain, compare, or fallback based on retrieved data.
