@@ -28,6 +28,26 @@ Interested in seeing the agent in action? Watch the technical walkthrough below:
 
 ---
 
+## 📁 Project Structure
+
+```text
+.
+├── agent/              # Core agent logic and tool definitions
+│   ├── core.py         # Main Agent class with decision logic and LLM integration
+│   └── tools.py        # Tool definitions (e.g., search_docs)
+├── knowledge/          # Knowledge base and retrieval layer
+│   ├── documents.json  # Raw document storage (JSON)
+│   └── store.py        # Semantic search and embedding management
+├── images/             # Documentation assets and demo video
+├── tests/              # Unit tests for agent verification
+├── main.py             # FastAPI application and endpoint definitions
+├── config.py           # Global configuration settings
+├── requirements.txt    # Python dependencies
+└── .env.example        # Environment variable template
+```
+
+---
+
 ##  Setup & Installation
 
 ### 1. Clone & Navigate
